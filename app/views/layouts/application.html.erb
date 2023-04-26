@@ -11,6 +11,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="Header">
+      <section class="HeaderItems">
+        <%= link_to image_tag("logo.png", width: "221px"), action: "home", id: "logo"%> 
+        <ul class="nav navbar-nav navbar-right">
+          <li class="Navlogin"><%=link_to "ログイン" %></li>
+          <li><%=link_to "新規登録", class:"btn btn-lg btn-primary" %></li>
+        </ul>
+      </section>
+    </header>
+    <div>
+      <%= yield %>
+    </div>
+    <footer class="Footer">
+      <div class="FooterContainer">
+        <%= link_to image_tag("logo.png", width: "292px"), action: "home"%>
+        <p class="FooterText">Copyright © Potepan Share 2023 All rights reserved</p>
+      </div>
+    </footer>
   </body>
 </html>

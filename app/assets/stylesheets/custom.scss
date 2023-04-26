@@ -1,0 +1,125 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.Header {
+  background-color: #1c1d3b;
+  padding: 20px;
+}
+
+.HeaderItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.Navlogin {
+  color: white;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.FirstView {
+  background-image: url("cover-lg.jpg");
+  background-size: cover;
+  background-position: 50%;
+  height: 750px;
+  margin-bottom: 180px;
+  padding-top: 80px;
+  width: 100%;
+}
+
+.FirstViewTitle {
+  color: white;
+  font-size: 84px;
+  line-height: 101px;
+  margin-bottom: 48px;
+  font-family: lato, sans-serif;
+  text-align: center;
+}
+
+.FirstViewSerch {
+  padding: 32px;
+  margin: auto;
+width: 704px;
+  background:hsla(0,0%,100%,.4);
+}
+
+.FirstViewSerchButton {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 58px;
+  font-size: 18px;
+  background-color: #ff7757;
+  color: #fff;
+  width: 100%;
+}
+
+.RecommendAreaSection {
+  margin-bottom: 260px;
+}
+
+.RecommendAreaTitle {
+  border-bottom: 3px solid #ff7757;
+  font-size: 44px;
+  line-height: 66px;
+  margin-bottom: 140px;
+  padding-bottom: 15px;
+  width: fit-content;
+}
+
+.RecommendAreas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.RecommendArea {
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  height: 455px;
+  justify-content: flex-end;
+  padding: 40px 24px;
+  width: calc(25% - 24px);
+}
+
+.RecommendAreaName {
+  font-size: 28px;
+  line-height: 42px;
+  color: white;
+}
+
+.TokyoArea {
+  background-image: url("tokyo.jpg");
+}
+
+.OsakaArea {
+  background-image: url("osaka.jpg");
+}
+
+.KyotoArea {
+  background-image: url("kyoto.jpg");
+}
+
+.SaporoArea {
+  background-image: url("sapporo.jpg");
+}
+
+.Footer {
+  background-color: #1c1d3b;
+  align-items: center;
+  display: flex;
+  height: 465px;
+  display: flex;
+  padding-left: 50px;
+}
+
+.FooterText {
+  color: white;
+}
