@@ -13,10 +13,10 @@
   <body>
     <header class="Header">
       <section class="HeaderItems">
-        <%= link_to image_tag("logo.png", width: "221px"), action: "home", id: "logo"%> 
+        <%= link_to image_tag("logo.png", width: "221px"), '/static_pages/home'%> 
         <ul class="nav navbar-nav navbar-right">
-          <li class="Navlogin"><%=link_to "ログイン" %></li>
-          <li><%=link_to "新規登録", class:"btn btn-lg btn-primary" %></li>
+          <li class="Navlogin"><%=link_to "ログイン", '/users/sign_in' %></li>
+          <li><%=link_to "新規登録", '/users/sign_up' , class:"btn btn-lg btn-primary" %></li>
         </ul>
       </section>
     </header>
@@ -25,7 +25,7 @@
     </div>
     <footer class="Footer">
       <div class="FooterContainer">
-        <%= link_to image_tag("logo.png", width: "292px"), action: "home"%>
+        <%= link_to image_tag("logo.png", width: "292px"), '/static_pages/home'%>
         <p class="FooterText">Copyright © Potepan Share 2023 All rights reserved</p>
       </div>
     </footer>
