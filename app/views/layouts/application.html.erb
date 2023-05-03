@@ -16,8 +16,20 @@
         <%= link_to image_tag("logo.png", width: "221px"), '/static_pages/home'%> 
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <%= current_user.username %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <div class="dropdown">
+              <a class="dropdowntext" data-toggle="dropdown" role="button" aria-expanded="false">
+                <%= current_user.username %><span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a class="dropdown-item"><%= link_to "施設の新規登録" %></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item"><%= link_to "予約済み一覧" %></a></li>
+                <li><a class="dropdown-item"><%= link_to "登録済み一覧" %></a></li>
+                <li><a class="dropdown-item"><%= link_to "アカウント設定" %></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></a></li>
+              </ul>
+            </div>
           <% else %>
             <li class="Navlogin"><%=link_to "ログイン", new_user_session_path %></li>
             <li><%=link_to "新規登録", new_user_registration_path , class:"btn btn-lg btn-primary" %></li>
@@ -34,5 +46,8 @@
         <p class="FooterText">Copyright © Potepan Share 2023 All rights reserved</p>
       </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>
