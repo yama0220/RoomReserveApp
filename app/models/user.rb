@@ -5,7 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates :username, presence: true
+  validates :introduction, length: { maximum: 200}
   
+  # 使用するUploader
+  mount_uploader :avatar, AvatarUploader
+
   # attr_writer :login
   # validates :username, presence: true, uniqueness: { case_sensitive: false }
   # validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
