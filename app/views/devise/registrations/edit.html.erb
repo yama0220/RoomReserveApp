@@ -5,18 +5,18 @@
 
   <div class="field">
     <%= f.label :画像アップロード %><br />
-    <%= image_tag @user.avatar.url, class: 'rounded-circle mr15', size:"50*50" %>
+    <%= image_tag @user.avatar.url, class:'UserIcon', width: '70', height: '70' %>
     <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
     <%= f.label :ユーザー名 %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= f.text_field :username, autocomplete: "username" %>
   </div>
 
   <div class="field">
     <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
