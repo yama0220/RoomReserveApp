@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     sessions: "users/sessions",
-    registrations: 'users/registrations' 
+    registrations: 'users/registrations'
   }
   # resources :users
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'users/account_show'
   get 'users/profile_show'
   get 'users/profile_edit'
-  patch 'profile_edit', to: 'users#profile_edit'
+  patch 'users/profile_show', to: 'users#update'
   # resources :user
 
 end
