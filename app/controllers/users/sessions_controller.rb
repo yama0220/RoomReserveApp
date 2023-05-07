@@ -3,6 +3,17 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
+  #ログイン後のリダイレクト先
+  def after_sign_in_path_for(resource)
+    flash[:notice] = "ログインに成功しました"
+    '/static_pages/home'
+  end 
+  #ログアウト後のリダイレクト先
+  def after_sign_out_path_for(resource)
+    flash[:notice] = "ログアウトしました"
+    '/static_pages/home'
+  end
+
   # GET /resource/sign_in
   # def new
   #   super
@@ -13,10 +24,10 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  DELETE /resource/sign_out
-  def destroy
-    super
-  end
+  # DELETE /resource/sign_out
+  # def destroy
+  #   super
+  # end
 
   # protected
 

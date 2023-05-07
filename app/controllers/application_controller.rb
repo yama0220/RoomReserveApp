@@ -4,11 +4,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, key: [:avatar])
-  end
-
-  def configure_permitted_parameters
-    added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
+    added_attrs = [:username, :email, :password, :password_confirmation]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :sign_in, keys: [:login, :password]
     # 更新時に取得する
@@ -16,14 +12,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:introduction])
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
   end
-
-    #ログイン後のリダイレクト先
-    def after_sign_in_path_for(resource)
-      '/static_pages/home'
-    end 
-    #ログアウト後のリダイレクト先
-    def after_sign_out_path_for(resource)
-      '/static_pages/home'
-    end
 
 end

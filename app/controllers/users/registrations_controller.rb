@@ -45,15 +45,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
 
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation])
+  end
+
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :password, :introduction, :avatar])
   end
 
-  # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  protected
+
+  # アカウント更新
+  def after_update_path_for(resource)
+    flash[:notice] = "アカウント情報を更新しました"
+    '/static_pages/home'
+  end
+
+  # 新規登録
+  def after_sign_up_path_for(resource)
+    flash[:notice] = "新規登録が完了しました"
+    '/static_pages/home'
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
