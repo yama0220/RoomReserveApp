@@ -6,13 +6,13 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     registrations: 'users/registrations' 
   }
-  resources :users
+  # resources :users
 
   # アカウント設定表示用
-  get 'user/account'
-  get 'user/profile'
-  get 'user/profile_edit'
-  patch 'user/profile_edit'
+  get 'users/account_show'
+  get 'users/profile_show'
+  get 'users/profile_edit'
+  patch 'profile_edit', to: 'users#profile_edit'
   # resources :user
 
 end
