@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'user/account'
   get 'user/profile'
   get 'user/profile_edit'
+  patch 'user/profile_edit'
   # resources :user
 
 end
