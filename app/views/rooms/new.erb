@@ -1,0 +1,44 @@
+<div class="form-view">
+  <section class="form-container">
+    <%= render "shared/error", obj: @rooms %>
+    <h2>新規登録</h2></br>
+    <%= form_with model: @rooms do |r| %>
+      <table class="form-table align-middle">
+        
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :施設名 %></label>
+          <div class="roomform-input"><%= r.text_field :room_name, :placeholder => "ルーム名を入力", class:"input-textbox" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :施設詳細 %></label>
+          <div class="roomform-input"><%= r.text_area :room_info, :placeholder => "施設詳細を入力", class:"input-textarea" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :料金 %></label>
+          <div class="roomform-input"><%= r.text_field :room_price, :placeholder => "一日あたりの料金を入力", class:"input-textbox" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :住所 %></label>
+          <div class="roomform-input"><%= r.text_field :room_address, :placeholder => "住所を入力", class:"input-textbox" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :施設画像 %></label>
+          <div class="roomform-input"><%= r.file_field :room_image %></div>
+        </div>
+
+        <div class="form-button-group">
+          <%= r.submit "保存" , class: "input-form-submit btn-block btn btn-large btn-primary" %>
+        </div>
+
+        <div class="form-button-group">
+          <button type="button" class="btn-block btn btn-outline-secondary"><%= link_to "キャンセル", :back %></button>
+        </div>
+        
+      </table>
+    <% end %>
+  </section>
+</div>

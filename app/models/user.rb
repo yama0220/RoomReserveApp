@@ -11,6 +11,8 @@ class User < ApplicationRecord
   # 使用するUploader
   mount_uploader :avatar, AvatarUploader
 
+  has_many :rooms
+
   # attr_writer :login
   # validates :username, presence: true, uniqueness: { case_sensitive: false }
   # validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true

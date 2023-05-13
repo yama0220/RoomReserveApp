@@ -1,3 +1,100 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.roon-new-validation {
+  font-size: 18px;
+  color: red;
+}
+
+.validation-frame {
+  background-color: #f6bfbc;
+}
+
+// 一覧デザイン
+.room-list-container {
+  margin-top: 40px;
+  margin-bottom: 260px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #dee2e6;
+}
+
+.align-middle {
+  vertical-align: middle!important;
+}
+
+// 登録フォームデザイン
+.form-view {
+  display: flex;
+  height: fit-content;
+  padding: 40px 0 180px;
+}
+
+.form-container {
+  background-color: #fff;
+  border-radius: 12px;
+  margin: auto;
+  width: 702px;
+}
+
+.room-form-input-group {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.roomform-label {
+  color: #333;
+  font-size: 16px;
+  line-height: 26px;
+  width: 33%;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+}
+
+.roomform-input {
+  width: 66%;
+}
+
+.input-textbox {
+  height: 30px;
+  width: 100%;
+}
+
+.input-textarea {
+  height: 100px;
+  width: 100%;
+}
+
+.input-form-submit {
+  margin-bottom: 16px;
+  background-color: #ff7757;
+}
+
+.input-form-submit:hover {
+  background-color: #ff7757;
+}
+
+.form-button-group {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 58px;
+  font-size: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  height: 45px;
+  line-height: 21px;
+  width: 100%;
+}

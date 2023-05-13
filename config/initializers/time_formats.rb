@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:room_inded_date_jp] = '%Y/%m/%d'
