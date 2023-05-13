@@ -16,7 +16,7 @@
       <tdoby>
         <% @rooms.each do |r| %>
           <tr>
-            <th class="align-middle"><%=  r.room_image %></th>
+            <th class="align-middle"><%= link_to image_tag r.room_image.to_s, size: "150x100" %></th>
             <th class="align-middle"><%= link_to r.room_name %></th>
             <th class="align-middle"><%= r.room_info %></th>
             <th class="align-middle">¥ <%= r.room_price %></th>
