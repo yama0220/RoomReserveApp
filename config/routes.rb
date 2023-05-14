@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   patch 'users/profile_show', to: 'users#update'
 
   # Room用
+  get 'rooms/result'
   resources :rooms
-
+  
 end

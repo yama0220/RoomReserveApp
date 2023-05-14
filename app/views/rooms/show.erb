@@ -1,0 +1,23 @@
+<section class="RoomContainer">
+  <div>
+    <div class="LinksContainer">
+      <%= link_to "戻る", :back %>
+      <%= link_to "編集", edit_room_path(@rooms) %>
+    </div>
+    <div class="RoomDetails">
+      <th><%= image_tag @rooms.room_image.to_s, size: "520x300" %></th>
+      <div class="RoomTextContainer">
+        <div class="RoomDetailsBody_name-and-price">
+          <p class="Details-name"><%= @rooms.room_name %></p>
+          <p class="Details-price">¥<%= @rooms.room_price%>〜</p>
+        </div>
+        <div>
+          <p class="Details-address"><%= @rooms.room_address %></p>
+          <p>☆ ☆ ☆ ☆ ☆</p>
+        </div>
+        <div>
+          <p class="Details-info"><%= @rooms.room_info %></p>
+        </div>
+      </div>
+  </div>
+</section>

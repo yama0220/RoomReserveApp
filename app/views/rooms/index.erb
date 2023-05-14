@@ -16,13 +16,13 @@
       <tdoby>
         <% @rooms.each do |r| %>
           <tr>
-            <th class="align-middle"><%= link_to image_tag r.room_image.to_s, size: "150x100" %></th>
-            <th class="align-middle"><%= link_to r.room_name %></th>
+            <th class="align-middle"><%= image_tag r.room_image.to_s, size: "150x100" %></th>
+            <th class="align-middle"><%= link_to r.room_name, room_path(r) %></th>
             <th class="align-middle"><%= r.room_info %></th>
             <th class="align-middle">¥ <%= r.room_price %></th>
             <th class="align-middle"><%= r.created_at.to_s(:room_inded_date_jp) %></th>
-            <th class="align-middle"><%= link_to "編集" %></th>
-            <th class="align-middle"><%= link_to "削除", room_path(r), method: :delete, data: { confirm:"本当に削除しますか？" } %></th>
+            <th class="align-middle"><%= link_to "編集", edit_room_path(r) %></th>
+            <th class="align-middle"><%= button_to "削除", room_path(r), { method: :delete, data: { confirm: '本当に削除しますか？' } } %></th>
           </tr>
         <% end %>
       </tbody>

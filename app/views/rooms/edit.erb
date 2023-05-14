@@ -1,28 +1,28 @@
 <div class="form-view">
   <section class="form-container">
     <%= render "shared/error", obj: @rooms %>
-    <h2>新規登録</h2></br>
+    <h2>施設情報の編集</h2></br>
     <%= form_with model: @rooms do |r| %>
       <table class="form-table align-middle">
         
         <div class="room-form-input-group">
           <label class="roomform-label form-label"><%= r.label :施設名 %></label>
-          <div class="roomform-input"><%= r.text_field :room_name, :placeholder => "ルーム名を入力", class:"input-textbox" %></div>
+          <div class="roomform-input"><%= r.text_field :room_name, class:"input-textbox" %></div>
         </div>
 
         <div class="room-form-input-group">
           <label class="roomform-label form-label"><%= r.label :施設詳細 %></label>
-          <div class="roomform-input"><%= r.text_area :room_info, :placeholder => "施設詳細を入力", class:"input-textarea" %></div>
+          <div class="roomform-input"><%= r.text_area :room_info, class:"input-textarea" %></div>
         </div>
 
         <div class="room-form-input-group">
           <label class="roomform-label form-label"><%= r.label :料金 %></label>
-          <div class="roomform-input"><%= r.text_field :room_price, :placeholder => "一日あたりの料金を入力", class:"input-textbox" %></div>
+          <div class="roomform-input"><%= r.text_field :room_price, class:"input-textbox" %></div>
         </div>
 
         <div class="room-form-input-group">
           <label class="roomform-label form-label"><%= r.label :住所 %></label>
-          <div class="roomform-input"><%= r.text_field :room_address, :placeholder => "住所を入力", class:"input-textbox" %></div>
+          <div class="roomform-input"><%= r.text_field :room_address, class:"input-textbox" %></div>
         </div>
 
         <div class="room-form-input-group">
