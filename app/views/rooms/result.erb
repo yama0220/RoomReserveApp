@@ -1,4 +1,4 @@
-<div class="SearchRoomsFormContainer">
+<section class="SearchRoomsFormContainer">
   <form class="SearchRoomsForm">
     <div class="SearchRoomsForm__input-group--area">
       <input class="SearchRoomsForm__input" placeholder="エリア名を入力" type="text" name="area" id="area" />
@@ -8,5 +8,25 @@
     </div>
     <input type="submit" name="commit" value="検索" class=" SearchRoomsForm__button" data-disable-with="検索" />
   </form>
-</div>
+</section>
 
+<section class="RoomsContainer">
+  <p class="RoomsContainer-result">X件が見つかりました</p>
+  <ul class="RoomList">
+    <%= @rooms.each do |r| %>
+    <li class="Room">
+      <%= image_tag r.room_image.to_s, class:"RoomImage" %>
+      <div class="RoomBody">
+        <p class="RoomName"><%= r.room_name %></p>
+        <p class="RoomAddress"><%= r.room_address %></p>
+        <p>☆ ☆ ☆ ☆ ☆</p>
+        <p class="RoomInfo"><%= r.room_info %></p>
+        <div class="RoomFooter">
+          <p class="RoomPrice">¥<%= r.room_price %>〜</p>
+          <a><%= link_to "詳細はこちら", room_path(r), class:"RoomLink" %></a>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</section>

@@ -100,7 +100,8 @@
 }
 
 .container {
-  max-width: 1440px;padding: 0 32px;
+  max-width: 1440px;
+  padding: 0 32px;
 }
 
 .RoomContainer {
@@ -230,4 +231,102 @@
   height: 55px;
   width: 100px;
   align-items: center;
+}
+
+.RoomsContainer {
+  margin-bottom: 260px;
+  max-width: auto;
+  padding: 30px 32px;
+  margin: 0px 180px;
+}
+
+.RoomsContainer-result {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 24px;
+  padding-top: 30px;
+}
+
+.RoomList {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 32px;
+  gap: 32px;
+}
+
+.Room {
+  background: #fff8f1;
+  border-radius: 26px;
+  width: calc(33.33333% - 21.33333px);
+}
+
+.RoomImage {
+  aspect-ratio: 16/9;
+    border-radius: 26px 26px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+}
+
+.RoomBody {
+  padding: 40px 24px;
+}
+
+.RoomName {
+  color: #767e86;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+
+.RoomAddress {
+  color: #767e86;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 3px;
+}
+
+.RoomInfo {
+  display: -webkit-box;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.RoomFooter {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.RoomPrice {
+  color: #ff7757;
+  font-family: Lato,sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 39px;
+  margin-bottom: 0;
+}
+
+.RoomLink {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 58px;
+  font-size: 18px;
+  background-color: #ff7757;
+  color: #fff;
+  font-size: 16px;
+  line-height: 58px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.RoomLink:hover {
+  color: white;
+  text-decoration: none;
 }
