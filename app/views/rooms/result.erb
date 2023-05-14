@@ -13,7 +13,7 @@
 <section class="RoomsContainer">
   <p class="RoomsContainer-result">X件が見つかりました</p>
   <ul class="RoomList">
-    <%= @rooms.each do |r| %>
+    <%= @results.each do |r| %>
     <li class="Room">
       <%= image_tag r.room_image.to_s, class:"RoomImage" %>
       <div class="RoomBody">

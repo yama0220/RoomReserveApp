@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'static_pages/home'
 
   devise_for :users, controllers: {
     sessions: "users/sessions",
@@ -14,7 +12,9 @@ Rails.application.routes.draw do
   patch 'users/profile_show', to: 'users#update'
 
   # Room用
+  get 'rooms/home'
   get 'rooms/result'
+  get 'rooms/search'
   resources :rooms
   
 end

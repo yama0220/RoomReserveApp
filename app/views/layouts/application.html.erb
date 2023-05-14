@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,7 +12,7 @@
   <body>
     <header class="Header">
       <section class="HeaderItems">
-        <%= link_to image_tag("logo.png", width: "221px"), '/static_pages/home'%> 
+        <%= link_to image_tag("logo.png", width: "221px"), rooms_home_path %> 
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <div class="dropdown">
@@ -43,7 +42,7 @@
     </div>
     <footer class="Footer">
       <div class="FooterContainer">
-        <%= link_to image_tag("logo.png", width: "292px"), '/static_pages/home'%>
+        <%= link_to image_tag("logo.png", width: "292px"), rooms_home_path %>
         <p class="FooterText">Copyright © Potepan Share 2023 All rights reserved</p>
       </div>
     </footer>

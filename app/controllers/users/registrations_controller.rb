@@ -64,14 +64,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # アカウント更新
   def after_update_path_for(resource)
-    flash[:notice] = "アカウント情報を更新しました"
-    '/static_pages/home'
+    '/rooms/home'
   end
 
   # 新規登録
   def after_sign_up_path_for(resource)
-    flash[:notice] = "新規登録が完了しました"
-    '/static_pages/home'
+    '/rooms/home'
   end
 
   # The path used after sign up for inactive accounts.

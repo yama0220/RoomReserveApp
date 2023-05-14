@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
   end
 
+  def set_search
+    @q_home = Room.ransack(params[:q])
+  end
+
 end

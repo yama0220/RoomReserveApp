@@ -6,8 +6,10 @@
       旅をしよう
     </h2>
     <div class="FirstViewSerch">
-      <input class="form-control" type="text" placeholder="エリア名を入力"><br>
-      <a><%= link_to "検索", rooms_result_path , class:"Button FirstViewSerchButton" %></a>
+      <%= search_form_for @q, url: rooms_result_path do |f| %>
+        <%= f.search_field :room_address_cont, class: 'form-control HomeSearch', placeholder: 'エリア名を入力' %>
+        <%= f.submit '検索', class: 'Button FirstViewSerchButton' %>
+      <% end %>
     </div>
   </section>
 </div>

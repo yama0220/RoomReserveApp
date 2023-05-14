@@ -1,10 +1,19 @@
 class RoomsController < ApplicationController
+  before_action :set_q, only: [:home, :search, :result]
+
+  def home
+    @results = @q.result
+  end
+
+  def search
+    @results = @q.result
+  end
 
   # 検索語の結果を表示
   def result
-    @rooms = Room.all
+    @results = @q.result
   end
-  
+
   def index
     @rooms = current_user.rooms
   end
@@ -44,6 +53,11 @@ class RoomsController < ApplicationController
     @rooms = Room.find(params[:id])
     @rooms.destroy
     redirect_to :rooms
+  end
+
+  private
+  def set_q
+    @q = Room.ransack(params[:q])
   end
 
 end

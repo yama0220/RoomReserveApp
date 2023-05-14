@@ -13,10 +13,8 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      flash[:notice] = "プロフィールを更新しました"
       redirect_to '/users/profile_show'
     else
-      flash[:notice] = "プロフィールを更新出来ませんでした"
       render '/user/profile_edit'
     end
   end

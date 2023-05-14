@@ -10,4 +10,8 @@ class Room < ApplicationRecord
   validates :room_price, numericality: true
   validates :room_address, presence: true
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["room_name", "room_info", "room_price", "room_address"]
+  end
+
 end
