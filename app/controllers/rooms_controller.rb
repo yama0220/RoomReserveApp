@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
   before_action :set_q, only: [:home, :search, :result]
 
+  # ホーム画面
   def home
-    @results = @q.result
   end
 
   def search

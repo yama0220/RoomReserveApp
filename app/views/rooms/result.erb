@@ -1,32 +1,34 @@
 <section class="SearchRoomsFormContainer">
-  <form class="SearchRoomsForm">
-    <div class="SearchRoomsForm__input-group--area">
-      <input class="SearchRoomsForm__input" placeholder="エリア名を入力" type="text" name="area" id="area" />
-    </div>
-    <div>
-      <input class="SearchRoomsForm__input" placeholder="キーワード名を入力" type="text" name="keyword" id="keyword" />
-    </div>
-    <input type="submit" name="commit" value="検索" class=" SearchRoomsForm__button" data-disable-with="検索" />
-  </form>
+    <form class="SearchRoomsForm">
+      <%= search_form_for @q, url: rooms_result_path do |f| %>
+        <div class="SearchRoomsForm__input-group--area">
+        <%= f.search_field :room_address_cont, class: "SearchRoomsForm__input", placeholder: 'エリア名を入力' %>
+        </div>
+        <div>
+          <%= f.search_field :room_info_cont, class: "SearchRoomsForm__input", placeholder: 'キーワード名を入力' %>
+        </div>
+        <%= f.submit '検索', class: "SearchRoomsForm__button Button FirstViewSerchButton" %>
+      <%end%>
+    </form>
 </section>
 
 <section class="RoomsContainer">
-  <p class="RoomsContainer-result">X件が見つかりました</p>
+  <p class="RoomsContainer-result"><%= @results.count %> 件が見つかりました</p>
   <ul class="RoomList">
-    <%= @results.each do |r| %>
-    <li class="Room">
-      <%= image_tag r.room_image.to_s, class:"RoomImage" %>
-      <div class="RoomBody">
-        <p class="RoomName"><%= r.room_name %></p>
-        <p class="RoomAddress"><%= r.room_address %></p>
-        <p>☆ ☆ ☆ ☆ ☆</p>
-        <p class="RoomInfo"><%= r.room_info %></p>
-        <div class="RoomFooter">
-          <p class="RoomPrice">¥<%= r.room_price %>〜</p>
-          <a><%= link_to "詳細はこちら", room_path(r), class:"RoomLink" %></a>
+    <% @results.each do |r| %>
+      <li class="Room">
+        <%= image_tag r.room_image.to_s, class:"RoomImage" %>
+        <div class="RoomBody">
+          <p class="RoomName"><%= r.room_name %></p>
+          <p class="RoomAddress"><%= r.room_address %></p>
+          <p>☆ ☆ ☆ ☆ ☆</p>
+          <p class="RoomInfo"><%= r.room_info %></p>
+          <div class="RoomFooter">
+            <p class="RoomPrice">¥<%= r.room_price %>〜</p>
+            <a><%= link_to "詳細はこちら", room_path(r), class:"RoomLink" %></a>
+          </div>
         </div>
-      </div>
-    </li>
+      </li>
     <% end %>
   </ul>
 </section>
