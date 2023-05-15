@@ -16,5 +16,9 @@ Rails.application.routes.draw do
   get 'rooms/result'
   get 'rooms/search'
   resources :rooms
+
+  # Reservation用
+  get 'reservations/list'
+  get 'reservations/confirmation'
   
 end

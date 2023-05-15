@@ -1,0 +1,29 @@
+<div class="FromWrapper">
+  <section class="FormContainer">
+    <h2>予約内容の確認</h2>
+
+    <div class="ReservationConfirm__value-group">
+      <p class="ReservationConfirm__label">チェックイン</p>
+      <p class="ReservationConfirm__value"></p>
+    </div>
+    <div class="ReservationConfirm__value-group">
+      <p class="ReservationConfirm__label">チェックアウト</p>
+      <p class="ReservationConfirm__value"></p>
+    </div>
+    <div class="ReservationConfirm__value-group">
+      <p class="ReservationConfirm__label">日数</p>
+      <p class="ReservationConfirm__value"></p>
+    </div>
+    <div class="ReservationConfirm__value-group">
+      <p class="ReservationConfirm__label">人数</p>
+      <p class="ReservationConfirm__value"></p>
+    </div>
+    <div class="ReservationConfirm__value-group">
+      <p class="ReservationConfirm__label">お支払い金額</p>
+      <p class="ReservationConfirm__value ReservationConfirm__value--price">¥</p>
+    </div>
+    <p class="ReservationConfirm__description">上記内容で正しければ「確定」ボタンを押してください。</p>
+    <input type="submit" name="commit" value="予約を確定" class="btn ReservationConfirm__button ReservationConfirm__button--submit">
+    <a><%= link_to "キャンセル", :back, class:"ReservationConfirm__button--cancel ReservationConfirm__button" %></a>
+  </section>
+</div>

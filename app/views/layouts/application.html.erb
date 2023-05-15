@@ -23,9 +23,9 @@
               <ul class="dropdown-menu" role="menu">
                 <li><a class="dropdown-item"><%= link_to "施設の新規登録", new_room_path %></a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item"><%= link_to "予約済み一覧" %></a></li>
+                <li><a class="dropdown-item"><%= link_to "予約済み一覧", reservations_list_path %></a></li>
                 <li><a class="dropdown-item"><%= link_to "登録済み一覧", rooms_path %></a></li>
-                <li><a class="dropdown-item"><%= link_to "アカウント設定", '/users/account_show' %></a></li>
+                <li><a class="dropdown-item"><%= link_to "アカウント設定", users_account_show_path %></a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></a></li>
               </ul>
