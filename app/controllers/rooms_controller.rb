@@ -34,6 +34,7 @@ class RoomsController < ApplicationController
 
   def show
     @rooms = Room.find(params[:id])
+    @reservations = Reservation.new
   end
 
   def edit

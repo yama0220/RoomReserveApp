@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :rooms
 
   # Reservation用
-  get 'reservations/list'
-  get 'reservations/confirmation'
+  post 'reservations/confirmation', to: 'reservations#confirmation'
+  resources :reservations
   
 end

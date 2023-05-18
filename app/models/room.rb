@@ -1,6 +1,7 @@
 class Room < ApplicationRecord
 
   belongs_to :user
+  has_many :reservations
 
   # RoomImageアップローダーと紐付け
   mount_uploader :room_image, RoomImageUploader

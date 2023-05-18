@@ -12,6 +12,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   has_many :rooms
+  has_many :reservations
 
   # attr_writer :login
   # validates :username, presence: true, uniqueness: { case_sensitive: false }

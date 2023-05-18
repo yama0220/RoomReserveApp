@@ -1,0 +1,32 @@
+<section class="container room-list-container">
+  <h2>予約済み一覧</h2>
+  <div>
+    <table class="table align-middle">
+      <thead>
+        <tr>
+          <th>画像</th>
+          <th>施設名</th>
+          <th>紹介文</th>
+          <th>合計料金</th>
+          <th>チェックイン</th>
+          <th>チェックアウト</th>
+          <th>予約確定日時</th>
+        </tr>
+      </thead>
+
+      <tdoby>
+        <% @reservations.each do |r| %>
+          <tr>
+            <th class="aligin-middle"><%= image_tag r.room.room_image.url, size:"150x100" %></th>
+            <th class="aligin-middle"><%= r.room.room_name %></th>
+            <th class="aligin-middle"><%= r.room.room_info %></th>
+            <th class="aligin-middle"><%= r.sum_price %></th>
+            <th class="aligin-middle"><%= r.check_in.strftime('%Y/%m/%d') %></th>
+            <th class="aligin-middle"><%= r.check_out.strftime('%Y/%m/%d') %></th>
+            <th class="aligin-middle"><%= r.created_at.to_s(:reservation_datetime_jp) %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
