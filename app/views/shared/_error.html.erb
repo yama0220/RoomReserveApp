@@ -1,0 +1,9 @@
+ <% if obj.errors.any? %>
+  <section  class="validation-frame">
+   <% obj.errors.full_messages.each do |message| %>
+     <ul>
+       <li class="roon-new-validation">・<%= message %></li>
+     </ul>
+   <% end %>
+   </section>
+ <% end %>

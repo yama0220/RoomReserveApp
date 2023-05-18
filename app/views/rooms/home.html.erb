@@ -1,0 +1,27 @@
+<div class="FirstView">
+  <section class="container">
+    <h2 class="FirstViewTitle">
+      Potepan Shareで<br>
+      まだ体験したことのない<br>
+      旅をしよう
+    </h2>
+    <div class="FirstViewSerch">
+      <%= search_form_for @q, url: rooms_result_path do |f| %>
+        <%= f.search_field :room_address_cont, class: 'form-control HomeSearch', placeholder: 'エリア名を入力' %>
+        <%= f.submit '検索', class: 'Button FirstViewSerchButton' %>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section class="RecommendAreaSection">
+    <h2 class="RecommendAreaTitle">おすすめのエリア</h2>
+    <div class="RecommendAreas">
+      <%= link_to image_tag("tokyo.jpg", size: "260x450" ), {:controller=>"rooms",:action=>"result",:q=>{:room_address_cont=>('東京')}}, class: "EachArea" %>
+      <%= link_to image_tag("osaka.jpg", size: "260x450" ), {:controller=>"rooms",:action=>"result",:q=>{:room_address_cont=>('大阪')}}, class: "EachArea" %>
+      <%= link_to image_tag("kyoto.jpg", size: "260x450" ), {:controller=>"rooms",:action=>"result",:q=>{:room_address_cont=>('京都')}}, class: "EachArea" %>
+      <%= link_to image_tag("sapporo.jpg", size: "260x450" ), {:controller=>"rooms",:action=>"result",:q=>{:room_address_cont=>('札幌')}}, class: "EachArea" %>
+    </div>
+  </section>
+</div>

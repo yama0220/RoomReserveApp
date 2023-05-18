@@ -1,0 +1,44 @@
+<div class="form-view">
+  <section class="form-container">
+    <%= render "shared/error", obj: @rooms %>
+    <h2>施設情報の編集</h2></br>
+    <%= form_with model: @rooms do |r| %>
+      <table class="form-table align-middle">
+        
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :施設名 %></label>
+          <div class="roomform-input"><%= r.text_field :room_name, class:"input-textbox" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :施設詳細 %></label>
+          <div class="roomform-input"><%= r.text_area :room_info, class:"input-textarea" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :料金 %></label>
+          <div class="roomform-input"><%= r.text_field :room_price, class:"input-textbox" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :住所 %></label>
+          <div class="roomform-input"><%= r.text_field :room_address, class:"input-textbox" %></div>
+        </div>
+
+        <div class="room-form-input-group">
+          <label class="roomform-label form-label"><%= r.label :施設画像 %></label>
+          <div class="roomform-input"><%= r.file_field :room_image %></div>
+        </div>
+
+        <div class="form-button-group">
+          <%= r.submit "保存" , class: "input-form-submit btn-block btn btn-large btn-primary" %>
+        </div>
+
+        <div class="form-button-group">
+          <a><%= link_to "キャンセル", :back, class:"btn-block btn btn-outline-secondary cancel" %></a>
+        </div>
+        
+      </table>
+    <% end %>
+  </section>
+</div>

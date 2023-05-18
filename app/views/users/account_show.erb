@@ -1,0 +1,44 @@
+<section class="container UserSection">
+  <h2>設定</h2>
+  <div class="UserContainer">
+    <ul class="SideNavigation">
+      <li class="SideNavigation__item active">
+        <a href="/users/account_show">アカウント</a>
+      </li>
+
+      <li class="SideNavigation__item ">
+        <a href="/users/profile_show">プロフィール</a>
+      </li>
+    </ul>
+
+    <div class="AccountInformation">
+      <ul class="TabNavigation">
+        <li class="TabNavigation__item active">
+        <a href="/users/account_show">アカウント</a></li>
+
+        <li class="TabNavigation__item ">
+        <a href="/users/profile_show">プロフィール</a></li>
+      </ul>
+
+      <div class="AccountInformation__header">
+        <h3>アカウント</h3>
+        <a class="AccountInformation__link" href="/users/edit">
+        <%= image_tag 'pencil_icon.png', width: '30', height: '30' %>編集</a>
+      </div>
+
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="email">メールアドレス</label>
+        <p class="AccountInformation__value">
+          <%= current_user.email%>
+        </p>
+      </div>
+
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="password">パスワード</label>
+        <p class="AccountInformation__value">
+          ********
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

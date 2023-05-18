@@ -1,0 +1,44 @@
+<section class="RoomContainer">
+  <div>
+    <div class="LinksContainer">
+      <%= link_to "戻る", :back %>
+      <%= link_to "編集", edit_room_path(@rooms) %>
+    </div>
+    <div class="RoomDetails">
+      <th><%= image_tag @rooms.room_image.to_s, size: "520x300" %></th>
+      <div class="RoomTextContainer">
+        <div class="RoomDetailsBody_name-and-price">
+          <p class="Details-name"><%= @rooms.room_name %></p>
+          <p class="Details-price">¥<%= @rooms.room_price%>〜</p>
+        </div>
+        <div>
+          <p class="Details-address"><%= @rooms.room_address %></p>
+          <p>☆ ☆ ☆ ☆ ☆</p>
+        </div>
+        <div>
+          <p class="Details-info"><%= @rooms.room_info %></p>
+        </div>
+        <%= form_with model: @reservations, method: :post, url: reservations_confirmation_path do |r| %>
+          <div class="reserve_form">
+            <div>
+              <%= r.label :チェックイン %>
+              <%= r.date_field :check_in %>
+            </div>
+            <div>
+              <%= r.label :チェックアウト %>
+              <%= r.date_field :check_out %>
+            </div>
+            <div>
+              <%= r.label :人数 %>
+              <%= r.text_field :people, class:'people_form' %>
+            </div>
+            <div>
+              <%= r.hidden_field :room_id, value: @rooms.id %>
+              <%= r.submit '予約する', class: "SearchRoomsForm__button Button FirstViewSerchButton" %>
+            </div>
+          </div>
+          <p class="validation-frame roon-new-validation room-reserve"><%= flash[:alert] %></p>
+        <% end %>
+      </div>
+  </div>
+</section>
