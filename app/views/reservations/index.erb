@@ -17,7 +17,11 @@
       <tdoby>
         <% @reservations.each do |r| %>
           <tr>
-            <th class="aligin-middle"><%= image_tag r.room.room_image.url, size:"150x100" %></th>
+            <% if r.room.room_image.blank? %>
+              <th class="aligin-middle"><%= image_tag 'room.png', size:"150x100"  %></th>
+            <% else %>
+              <th class="aligin-middle"><%= image_tag r.room.room_image.url, size:"150x100" %></th>
+            <% end %>
             <th class="aligin-middle"><%= r.room.room_name %></th>
             <th class="aligin-middle"><%= r.room.room_info %></th>
             <th class="aligin-middle"><%= r.sum_price %></th>

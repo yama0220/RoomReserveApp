@@ -41,6 +41,10 @@ class ReservationsController < ApplicationController
       flash[:alert] = "人数は必須項目です"
       render 'rooms/show' and return
     end
+    if @reservations.people < 1
+      flash[:alert] = "0以下の数値は入力できません"
+      render 'rooms/show' and return
+    end
     @reservations.count_day = @reservations.check_out - @reservations.check_in
     @reservations.sum_price = ( @reservations.count_day * @rooms.room_price ) * @reservations.people
   end
